@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__PUBLIC__css/bootstrap.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/comon.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/style.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/shop_cart.css"/>
+		<script type="text/javascript" src="__PUBLIC__js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/comfirm_order.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/angular.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/shop_cart.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/quit.js" ></script>
+	</head>
+	<body ng-app="shopCar">
+		<!--header-->
+		<div class="header">
+			<div class="header-top">
+				<div class="mg">					{if condition="session('?uname')"}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('User/user')}" class="login pull-left" id="login"><i>{$Think.session.uname}</i></a>						<a href="{:url('Login/logout')}" class="quit" ><span>|</span> 安全退出</a>					{else /}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('Login/login')}" class="login pull-left" id="login"><i>请登录</i> <span>|</span></a>							<a href="{:url('register/register')}" class=" regist"> 免费注册</a>					{/if}
+					<ul class="  pull-right">
+						
+						<li><a href="{:url('User/user')}">会员中心</a></li>
+						<li><a href="###">企业采购</a></li>
+						<li>
+							<a href="###">客户服务</a>
+							<dl>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<a href="###">网站导航</a>
+							<dl>
+								<dd>
+									
+									<a href="###">网站导航</a>
+								</dd>
+								<dd>
+									<a href="###">网站导航</a>
+								</dd>
+							</dl>
+	
+						</li>
+					</ul>
+				</div>
+			</div><!--header_top end-->	
+			
+			<div class="comfir">
+				<div class="mg">
+					<ul>
+						<li>
+							<img src="__PUBLIC__img/com_01.png"> 
+							100%正品保证
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_02.png"> 
+							新人首单免邮
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_03.png"> 
+							7天无理由退换货
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_04.png"> 
+							首次退换货免邮
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div><!--content end-->
+			<div class="footer">
+			<div class="mg">
+				<div class="left">
+					<div class="contact">
+					<h1>官方客服电话</h1>
+					<p>400-060-2008</p>
+					<p>周一至周日：9:00-22:00</p>
+					</div>
+					<h2>微博：168888@.com</h2>
+					<h2>QQ:1268888</h2>
+				</div>
+				<div class="right">
+					<dl>
+						<dt>购物指南</dt>
+						<dd>
+							<a href="register.html">免费注册</a>
+						</dd>
+						<dd>
+							<a href="###">购物流程</a>
+						</dd>
+						<dd>
+							<a href="###">会员介绍</a>
+						</dd>
+						<dd>
+							<a href="###">常见问题</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送方式</dt>
+						<dd>
+							<a href="###">上门自提</a>
+						</dd>
+						<dd>
+							<a href="###">配送服务查询</a>
+						</dd>
+						<dd>
+							<a href="###">配送费收取标准</a>
+						</dd>
+						<dd>
+							<a href="###">海外配送</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>支付方式</dt>
+						<dd>
+							<a href="###">货到付款</a>
+						</dd>
+						<dd>
+							<a href="###">在线支付</a>
+						</dd>
+						<dd>
+							<a href="###">分期付款</a>
+						</dd>
+						<dd>
+							<a href="###">公司转账</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>售后服务</dt>
+						<dd>
+							<a href="###">售后政策</a>
+						</dd>
+						<dd>
+							<a href="###">价格保护</a>
+						</dd>
+						<dd>
+							<a href="###">返修/退换货</a>
+						</dd>
+						<dd>
+							<a href="###">取消订单</a>
+						</dd>
+						<dd>
+							<a href="###">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="__PUBLIC__img/weixin.png">
+							<p>官方微信</p>
+						</dd>
+					</dl>
+				</div><!--rightend-->
+				<div class="bottom">
+					<ul>
+						<li>
+							<a href="###">网站地图 </a>
+						</li>
+						<li>
+							<a href="###">法律声明 </a>
+						</li>
+						<li>
+							<a href="###">隐私条款 </a>
+						</li>
+						<li>
+							<a href="###">服务条款 </a>
+						</li>
+					</ul>
+					<p>
+						鲁ICP备15042201号-1 Copyright ©2016 康丽妍 版权所有
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>$(function(){		$("#add").each(function(a){		$('.aid').click(function(){//			alert(12)
+//			return false			var i=parseInt($(".prd_num").eq(a).val());			i=i+1;			$(".prd_num").eq(a).val(i);			//小计			var price=$(this).parent().parent().find('b.b_price').text()			$(this).parent().parent().find('td.td_total').text('￥ '+price*i)			total_price()		})	})		$("#sub").each(function(a){		$('.xid').click(function(){			var i=parseInt($(".prd_num").eq(a).val());			if(i>1){				i=i-1;				$(".prd_num").eq(a).val(i);			}			//小计			var price=$(this).parent().parent().find('b.b_price').text()			$(this).parent().parent().find('td.td_total').text('￥ '+price*i)			total_price()		})	})			$('.ck').click(function(){		total_price()	})		$('.ck_all').click(function(){		var bool=$(this).is(":checked")		if(bool){			$('.ck_all').prop('checked',true)			$('.ck').prop('checked',true)			total_price()		}else{			$('.ck_all').prop('checked',false)			$('.ck').prop('checked',false)			$("i.i_price").text(0)			$("i.i_num").text(0)					}	})		function total_price(){		var num=0		var total=0		var state=0		$('.ck').each(function(){						var bool=$(this).is(":checked")			if(bool){			//数量			var cnum=parseInt($(this).parent().parent().parent().find('.prd_num').val())			num=num+cnum			//价格			var cprice=$(this).parent().parent().parent().find('td.td_total').text()			cprice=parseFloat(cprice.substr(2))			total=total+cprice			}		})			$("i.i_price").text(total)		$("i.i_num").text(num)	}			})		</script>

@@ -1,0 +1,106 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+<!--  <script type="text/javascript" src="public/lib/jquery/1.9.1/jquery.min.js"></script> -->
+        <meta charset="utf-8">
+        <title>社聊网登录</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        
+        <link rel="stylesheet" href="__PUBLIC__css/reset.css" type="css/text"/>
+        <link rel="stylesheet" href="__PUBLIC__css/supersized.css">
+        <link rel="stylesheet" href="__PUBLIC__css/style.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <h1>社聊登录</h1>
+            <form action="" method="post">
+                <input type="text" name="name" class="name" placeholder="账号" value='' />
+                <input type="password" name="pwd" class="pwd" placeholder="密码" value='' />
+                <img src="{:captcha_src()}" id="val" style=" float: left; margin-top: 20px;" />
+                <input style="width: 120px; margin-top: 20px; border-radius:0;" name="val" />
+                <!--<input type="checkbox" name="che" style="width: 15px; height: 15px;"  />记住密码-->
+               
+                <!--<span style="color: #999999; font-size: 20px;" name=>记住密码</span>-->
+                <button type="submit" class="button">登录</button>
+                <div class="error"><span>+</span></div>
+            </form>
+            
+            
+          
+	
+        </div>
+       
+       
+        <!-- Javascript -->
+      
+        <script src="__PUBLIC__js/jquery-1.8.2.min.js"></script>
+        <script src="__PUBLIC__js/supersized.3.2.7.min.js"></script>
+        <script src="__PUBLIC__js/supersized-init.js"></script>
+        <script src="__PUBLIC__js/scripts.js"></script>
+		<script src="__PUBLIC__js/jquery-1.8.2.min.js" ></script>
+		
+    </body>
+
+</html>
+<script>
+
+$(function(){
+	$('.button').click(function(){
+//		alert(123)
+		var name=$('input[name="name"]').val()
+		var pwd=$('input[name="pwd"]').val()
+		var val=$('input[name="val"]').val()
+		
+		if(name=='' || name==null || name== undefined){
+			alert('用户不能为空')
+			return false
+		}
+		
+		if(pwd=='' || pwd==null || pwd== undefined){
+			alert('密码不能为空')
+			return false
+		}
+		
+		if(val=='' || val==null || val== undefined){
+			alert('验证码不能为空')
+			return false
+		}
+		
+		$.post("{:url('Admin/login')}",{name:name,pwd:pwd,val:val},function(data){
+//			alert(data)
+			if(data.error){
+				alert(data.msg)
+				location="{:url('index/index')}"
+			}else{
+				alert(data.msg)
+			}
+		},'json')
+		return false
+	})
+	
+	$('#val').click(function(){
+		change_code()
+	
+	})
+	
+})
+
+function change_code(){
+	$('#val').attr('src',"{:captcha_src()}"+'?'+Math.random())
+}	
+
+</script>

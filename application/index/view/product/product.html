@@ -1,0 +1,180 @@
+{include file="public/header"}<link rel="stylesheet" href="__PUBLIC__css/shop_list.css" /><script type="text/javascript" src="__PUBLIC__js/shop_list.js" ></script>
+			
+		<!--header end-->
+		<div class="content">
+			<div class="mg">
+				<p class="all">
+					<span>全部</span> <span>产品中心</span>
+				</p>
+			
+				<div class="underwear">
+					<ul>
+						<li>
+							<span>{$cone.name}：</span>
+							<dl>								{volist name='childlist' id='child'}
+								<dd><a href="{:url('product',['id'=>$cone.id,'cid'=>$child.id])}" >{$child.name}</a></dd>								{/volist}
+							</dl>
+							<p class="more"><a href="{:url('Product/product',['id'=>$cone.id])}">更多</a></p>
+						</li>					
+						<li>							<span>品牌：</span>							<dl>								{volist name='brandlist' id='brand'}								<dd><a href="{:url('product',['id'=>$cone.id,'cid'=>$child.id,'bid'=>$brand.id])}">{$brand.name}</a></dd>								{/volist}							</dl>							<p class="more"><a href="{:url('Product/product',['id'=>$cone.id])}">更多</a></p>						</li>						
+					</ul>
+				</div><!--underwear end-->
+				<div class="ad">
+					<h1>
+								商品精选
+								<span>广告</span>
+					</h1>
+					<ul>
+						{volist name='prodlist' id='prolsitv'}						<li>							<a href=""><img src="{$prolsitv.thumb|substr=###,1}"width="155" height="154" class="img-responsive"></a>							<p>￥{$prolsitv.sales}</p>							<a href="" >{$prolsitv.name}</a>							<p>已有<strong>367</strong>人评价</p>						</li>						{/volist}
+						
+					</ul>
+				</div><!--ad end-->
+				<div class="shop_list">
+					<div class="top">
+						<ul>
+							<li class="on">
+								<a href="###">综合排序</a>
+							</li>
+							<li>
+								<a href="###">销量</a>
+							</li>
+							<li>
+								<a href="{:url('product',['id'=>$cone.id,'order'=>'sales'])}">价格</a>
+							</li>
+							<li>
+								<a href="###">评论数</a>
+							</li>
+							<li>
+								<a href="{:url('product',['id'=>$cone.id,'order'=>'pid'])}">新品</a>
+							</li>
+						</ul>
+						
+						
+						<a class="next_rig" href="###"><img src="__PUBLIC__img/shop_list_right.png"></a>
+						<a class="pre_lef" href="###"><img src="__PUBLIC__img/shop_list_left.png"></a>
+						<p>共<strong>111.8万件商品</strong> <span><i>1</i>/100</span></p>
+					</div><!--top end-->
+					<div class="bot">
+						<div class="adres">
+							<span>配送至</span>
+							<p id="address"><i>北京朝阳区三环以内 </i></p>
+							<ul id="add_down">
+								<li>北京朝阳区二环以内</li>
+								<li>北京朝阳区一环以内</li>
+								<li>北京朝阳区三环以内</li>
+							</ul>
+						</div>
+						<ul class="send">
+							<li>
+								<label class="c-checkbox">
+									<input type="checkbox">
+									<span></span>
+									<i>顺风配送</i>
+								</label>
+							</li>
+							<li>
+								<label class="c-checkbox">
+									<input type="checkbox">
+									<span></span>
+									<i>货到付款</i>
+								</label>
+							</li>
+							<li>
+								<label class="c-checkbox">
+									<input type="checkbox">
+									<span></span>
+									<i>仅显示有货</i>
+								</label>
+							</li>
+						</ul>
+						<div class="ser">
+							<a href="###">确定</a>
+							<input type="text" placeholder="在结果中搜索">
+						</div>
+					</div><!--bot end-->
+					<div class="shop">
+						<ul>											{volist name='plist' id='plistv'}
+							<li>
+								<a href="{:url('Product/pro_details',['id'=>$plistv.id])}"><img src="{$plistv.thumb|substr=###,1}"width="233" height="301"></a>
+								<p>￥{$plistv.sales}</p>
+								<h2><a href="{:url('Product/pro_details',['id'=>$plistv.id])}">{$plistv.name}</a></h2>
+								<p>套装 卡通熊 女L(165/95)</p>
+								<p>已有<strong>1400+</strong>人评价</p>
+								<a href="###" class="succ_sub">月成交 <span>5891笔</span></a>
+								<img src="__PUBLIC__img/user_start.jpg" class="start"/>
+							</li>							{/volist}
+							
+							
+						</ul>
+					</div><!---shop end-->
+					<div class="page">						
+							<ul>
+								<li><a href="###"> << 上一页</a></li>
+								<li class="on"><a href="###">1</a></li>
+								<li><a href="###">2</a></li>
+								<li><a href="###">3</a></li>
+								<li>...</li>
+								<li><a href="###">下一页 >></a></li>
+								<li>共100页，</li>
+								<li>
+									到第<input type="text" value="1">页
+								</li>
+								<li>
+									<a href="###">确定</a>
+								</li>
+							</ul>
+					</div><!--page end-->
+					<ul class="find">
+						<li>您是不是想找</li>
+						<li>
+							<a href="shop_list.html">
+								睡衣女秋 
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								亲子睡衣 
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								睡衣女纯棉
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								秋装女
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								男士睡衣 
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								真丝睡衣 
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								连体睡衣
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								睡衣女
+							</a>
+						</li>
+						<li>
+							<a href="shop_list.html">
+								夏睡裙
+							</a>
+						</li>
+					</ul>
+					<div class="ser_bot">
+						<input type="text" placeholder="睡衣女">
+						<a class="btn" href="###">搜索</a>
+					</div>
+				</div>
+{include file="public/footer"}

@@ -1,0 +1,197 @@
+{include file="public/header"}
+		<link rel="stylesheet" href="__PUBLIC__css/pro_details.css" />
+		<script type="text/javascript" src="__PUBLIC__js/pro_details.js" ></script>
+		<!--header end-->
+		<div class="content">
+			<div class="mg">
+				<p><a href="shop_list">全部<span></span></a><a href="shop_list">睡衣<span></span></a><a href="shop_list">睡衣女<span></span></a></p>				
+				<div class="pro_img">					
+					<div id="small_box" class="small_box">
+						<img src="{$prolist.img[0]|substr=###,1}"width="420" height="418" class="big_pic">
+						<div class="ret" id="box01"></div>
+					</div>
+					<div class="big_box" id="box"></div>
+					<ul class="swich" id="swich_pic">						{volist name='prolist.img' id='pv'}
+						<li>
+							<img src="{$pv|substr=###,1}" class="img-responsive">
+						</li>						{/volist}
+						
+					</ul>					
+					<a class="pre" href="###"></a>
+					<a  class="next" href="###"></a>
+					<div class="share">
+						<ol>
+							<li>
+								<a href="###">分享</a>
+							</li>
+							<li>
+								<a href="###">收藏商品（889人气）</a>
+							</li>
+							<li>
+								<a href="###">举报</a>
+							</li>
+						</ol>
+					</div>
+				</div><form action="" method="post">
+				<div class="pro_int">					<input type="hidden" value="{$prolist.id}" class="pid sds_as" />
+					<h1>秋泓齐 春秋季长袖可爱猫头鹰睡裙 韩版卡通女人宽松家居服睡裙</h1>
+					<div class="price">
+						<h2><span>购物券</span>全康丽妍商城通用<a href="###">商城优惠券</a></h2>
+						<p>价格<i>¥ {$prolist.market}</i></p>
+						<p>促销价<i>¥<strong>{$prolist.sales}</strong></i><span>16年冬款</span></p>
+					</div>
+					<ul class="send_mon">
+						<li>运费</li>
+						<li>江苏苏州  &nbsp;至 &nbsp;</li>
+						<li>
+							<p>广州</p> <span class="glyphicon glyphicon-menu-down" ></span>
+							<dl>
+								<dd>广州</dd>
+								<dd>广州</dd>
+								<dd>广州</dd>
+								<dd>广州</dd>
+							</dl>
+						</li>
+						<li>快递：0.00</li>
+					</ul>
+					<p class="sale"><span>月销量<i>3666</i></span><span>累计评价<i>9888</i></span><span>送积分<i>98</i></span></p>
+					<p class="size">
+						尺码
+						<span class="on">160（M）</span>
+						<span >165（L）</span>
+						<span>170（XL）</span>
+					</p>
+					<p class="color">
+						颜色分类
+						<a href="###" class="on"><img src="__PUBLIC__img/color_01_16.jpg"></a>
+						<a href="###"><img src="__PUBLIC__img/color_02_16.jpg"></a>
+					</p>
+					<p class="num">
+						数量
+						<input type="text" value="1" class="txt"><span class="add glyphicon glyphicon-menu-up"></span><span class="sub glyphicon glyphicon-menu-down"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件<i>库存889件</i>
+					</p>
+					<a class="buy" href="comfirm_order.html">立即购买</a>
+					<a href="javascript:void(0);" ><span><img src="__PUBLIC__img/pro_shop.png"></span><input type="button" class="shop_car" value="加入购物车" style="background: none; border: none;" /></a>
+					<ul class="serv">
+						<li>服务承诺</li>
+						<li>正品保证</li>
+						<li>极速退款</li>
+						<li>赠送运费</li>
+						<li>
+							<p>支付方式</p><span class="glyphicon glyphicon-menu-down" ></span>
+							<dl>
+								<dd>支付宝</dd>
+								<dd>支付宝</dd>
+							</dl>
+						</li>
+						<li>七天无理由退换</li>
+					</ul>
+				</div><!--pro_int end-->			</form>
+				<div class="look">
+					<h1>
+						<span>看了又看</span>
+					</h1>
+					<ul>						{volist name='detalis' id='detav'}
+						<li>
+							<a href="pro_details.html">
+								<img src="{$detav.thumb|substr=###,1}"width="142" height="141">
+							</a>
+							<p>
+								￥{$detav.sales}
+							</p>
+						</li>						{/volist}
+					
+					</ul>
+					<a class="pre" href="###"></a>
+					<a class="up" href="###"></a>
+				</div><!--look end-->
+				<div class="ad">
+					<ul>
+						<li>
+							<h1>
+								商品精选
+								<span>广告</span>
+							</h1>
+							<a href="pro_details.html"><img src="__PUBLIC__img/ad01.jpg" class="img-responsive"></a>
+							<p>¥128.00</p>
+							<a href="pro_details.html">芊之雅秋天韩版居家服<i>睡衣女</i>纯棉长袖套装秋冬季</a>
+							<p>已有<strong>367</strong>人评价</p>
+						</li>
+						
+					</ul>
+				</div><!--ad end-->
+				<div class="shop_details">
+					<ul class="top">
+						<li class="on">
+							<a href="javascript:void(0)">商品详情</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">累计评价 <span>8889+</span></a>
+						</li>
+					</ul>
+					<div class="option">						<ul>							<li></li>						</ul>
+					</div>
+						<div class="page" id="page">
+							<ul>
+								<li>
+									<a href="###">1</a>
+								</li>
+								<li>
+									<a href="###">2</a>
+								</li>
+								<li>
+									<a href="###">3</a>
+								</li>
+								<li>
+									<a href="###">4</a>
+								</li>
+								<li>
+									<a href="###">5</a>
+								</li>
+								<li>
+									<a href="###">6</a>
+								</li>
+								<li>
+									<a href="###">7</a>
+								</li>
+								<li>
+									...
+								</li>
+								<li>
+									<a href="###">下一页</a>
+								</li>
+							</ul>
+							</div><!--page end-->
+								<div class="like">
+									<h1>
+										猜你喜欢
+									</h1>
+									<ul>
+										<li>
+											
+											<a href="pro_details.html"><img src="__PUBLIC__img/guse01.jpg"></a>
+											<p>￥129.00</p>
+											<h2><a href="pro_details.html">依迪婷<i>睡衣女</i>秋长袖卡通可爱加大码棉居服</a></h2>
+											<p>套装 卡通熊 女L(165/95)</p>
+											<p>已有<strong>1400+</strong>人评价</p>
+											<a href="###" class="succ_sub">月成交 <span>5891笔</span></a>
+											<img src="__PUBLIC__img/user_start.jpg" class="start"/>
+										</li>
+										
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div><!--option end-->
+				</div><!--shop_details end-->
+			</div><!--mg end-->
+			<div class="comfir">{include file="public/footer"}<script>
+	$(function(){
+		$('.shop_car').click(function(){
+			var pid=$('.sds_as').val()			var num=$('.txt').val()//			alert(pid)
+//			return false 
+			$.post("{:url('Cart/addCart')}",{pid:pid,num:num},function(data){				if(data.code==400){					alert(data.msg)					location="{:url('Login/login')}"				}else{					alert(data.msg)				}							})
+		})
+	})
+	
+</script>

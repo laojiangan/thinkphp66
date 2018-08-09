@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{$title}</title>
+		<link rel="stylesheet" href="__PUBLIC__css/bootstrap.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/comon.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/style.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/shop_cart.css"/>
+		<script type="text/javascript" src="__PUBLIC__js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/comfirm_order.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/angular.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/shop_cart.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/quit.js" ></script>
+	</head>
+	<body ng-app="shopCar">
+		<!--header-->
+		<div class="header">
+			<div class="header-top">
+				<div class="mg">					{if condition="session('?uname')"}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('User/user')}" class="login pull-left" id="login"><i>{$Think.session.uname}</i></a>						<a href="{:url('Login/logout')}" class="quit" ><span>|</span> 安全退出</a>					{else /}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('Login/login')}" class="login pull-left" id="login"><i>请登录</i> <span>|</span></a>							<a href="{:url('register/register')}" class=" regist"> 免费注册</a>					{/if}
+					<ul class="  pull-right">
+						
+						<li><a href="{:url('User/user')}">会员中心</a></li>
+						<li><a href="###">企业采购</a></li>
+						<li>
+							<a href="###">客户服务</a>
+							<dl>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<a href="###">网站导航</a>
+							<dl>
+								<dd>
+									
+									<a href="###">网站导航</a>
+								</dd>
+								<dd>
+									<a href="###">网站导航</a>
+								</dd>
+							</dl>
+	
+						</li>
+					</ul>
+				</div>
+			</div><!--header_top end-->
+			<div class="header_content">
+				<div class="mg">
+					<a href="{:url('index/index')}" class="pic"><img src="__PUBLIC__img/logo_03.png" alt="图片无法加载"></a>
+					<h1>
+						
+					</h1>
+					<div class="search pull-right" >
+						<input type="text"placeholder="睡衣女">
+						<a href="###" class="search_text">搜索</a>
+						
+					</div>
+				</div>
+			</div><!--header_content end-->
+		</div><!--header end-->
+		<div class="content">
+			<div class="mg">
+				<div class="shop_cart">
+					<h1>
+						全部商品 <i></i>
+					</h1>
+					
+					<table ng-controller = "shopController">
+						<thead>
+							<tr>
+								<th>
+									<label class="c-checkbox" all>
+										<input type="checkbox" class="ck_all">
+										<span></span>
+										<i>全选</i>
+									</label>
+								</th>
+								<th colspan="2">
+									商品
+								</th>
+								<th>
+									单价（元）
+								</th>
+								<th>
+									数量
+								</th>
+								<th>
+									小计（元）
+								</th>
+								<th >
+									操作
+								</th>
+							</tr>
+						</thead>
+						<tbody>						
+							<tr class="activitly">
+								<td colspan="7">
+									<div class="top">
+										<label class="c-checkbox" all>
+											<i>康丽妍商城</i>
+										</label>
+									</div>
+									<div class="bottom">										<h2>满减<span></span></h2>										<p>活动商品已购满280.00元（<i>已减80.00</i>）  <a href="###">去凑单≥</a></p>										<p class="mon">387.00</p>										<p class="free">减： 80.00</p>									</div>
+								</td>
+							</tr>							<!--购买的商品列表-->							{volist name='list' id='cv'}
+							<tr class="goods" style="background: none;" >
+								<td class="main">
+									<label class="c-checkbox" >
+											<input type="checkbox" name="id[]" value="{$cv.id}" class="ck"  / >											
+											<span></span>
+									</label>
+									<a href="{:url('Product/pro_details',['id'=>$cv.pid])}"><img src="{$cv.thumb}"></a>
+									
+								</td>
+								<td>
+									<p><a href="{:url('Product/pro_details',['id'=>$cv.pid])}" ng-bind="item.tittle">{$cv.name}</a></p>
+								</td>
+								<td>
+									<p>颜色：爱家款</p>
+									<p>尺码：120</p>
+								</td>
+								<td >
+									<b class="b_price">{$cv.sales}</b>
+								</td>
+								<td>
+									<span class="sub xid" id="sub" >-</span>									<input type="text" class="prd_num"  value="{$cv.num}">									<span class="add aid" id="add">+</span>
+									<p>有货</p>
+								</td>
+								<td class="min_total td_total">
+									{$cv.total}
+								</td>
+								<td>
+									<a href="###" class="delete">删除</a>
+									<a href="###" class="collec">移到我的关注</a>
+								</td>
+							</tr>							{/volist}
+							<tr class="account">
+								<td colspan="7">
+									<div class="acc_det">
+										<label class="c-checkbox all">
+											<input type="checkbox" class="ck_all">
+											<span></span>
+											<i>全选</i>
+										</label>
+										<p class="delete">删除选中的商品 </p>
+										<p class="collect"><a href="###">移到我的关注   </a></p>
+										<a href="{:url('Comfirm/comfirm_order')}" class="pay">去结算</a>
+										<p style="height: 31px; line-height: 35px; margin-right: 30px;">总价：<i class="i_price">￥0.00</i></p>
+										<p style=" height: 31px; line-height: 35px; margin-top: 32px; margin-right: -90px;">已选择  <i class="i_num">0</i>  件商品  </p>
+										</div>
+									</div>
+								</td>
+								
+							</tr>
+						</tbody>
+					</table>	
+					<div class="pro">
+					<div class="swich_top">
+						<ul>
+							<li class="on"><a href="###">猜你喜欢</a></li>
+							<li><a href="###">我的关注</a></li>
+							<li><a href="###">最近浏览的</a></li>
+						</ul>	
+					</div>
+					<div class="swich_con">
+						
+							<ul>
+								<li class="on">
+									<dl>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_01_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_02_03.jpg"></a>
+											<h1>
+											<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+											衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html"> 
+												加入购物车
+											</a>
+										</dd>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_03_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_04_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_05_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_05_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+									</dl>
+									<a href="###" class="pre" id="pre"></a>
+									<a href="###" class="next" id="next"></a>
+								</li>
+								<li>
+									我的关注
+								</li>
+								<li>
+									最近浏览的
+								</li>
+							</ul>
+						
+					</div>
+				</div><!--pro end-->
+				</div><!--shop_cart end-->
+			</div><!--mg end-->		
+			<div class="comfir">
+				<div class="mg">
+					<ul>
+						<li>
+							<img src="__PUBLIC__img/com_01.png"> 
+							100%正品保证
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_02.png"> 
+							新人首单免邮
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_03.png"> 
+							7天无理由退换货
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_04.png"> 
+							首次退换货免邮
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div><!--content end-->
+			<div class="footer">
+			<div class="mg">
+				<div class="left">
+					<div class="contact">
+					<h1>官方客服电话</h1>
+					<p>400-060-2008</p>
+					<p>周一至周日：9:00-22:00</p>
+					</div>
+					<h2>微博：168888@.com</h2>
+					<h2>QQ:1268888</h2>
+				</div>
+				<div class="right">
+					<dl>
+						<dt>购物指南</dt>
+						<dd>
+							<a href="register.html">免费注册</a>
+						</dd>
+						<dd>
+							<a href="###">购物流程</a>
+						</dd>
+						<dd>
+							<a href="###">会员介绍</a>
+						</dd>
+						<dd>
+							<a href="###">常见问题</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送方式</dt>
+						<dd>
+							<a href="###">上门自提</a>
+						</dd>
+						<dd>
+							<a href="###">配送服务查询</a>
+						</dd>
+						<dd>
+							<a href="###">配送费收取标准</a>
+						</dd>
+						<dd>
+							<a href="###">海外配送</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>支付方式</dt>
+						<dd>
+							<a href="###">货到付款</a>
+						</dd>
+						<dd>
+							<a href="###">在线支付</a>
+						</dd>
+						<dd>
+							<a href="###">分期付款</a>
+						</dd>
+						<dd>
+							<a href="###">公司转账</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>售后服务</dt>
+						<dd>
+							<a href="###">售后政策</a>
+						</dd>
+						<dd>
+							<a href="###">价格保护</a>
+						</dd>
+						<dd>
+							<a href="###">返修/退换货</a>
+						</dd>
+						<dd>
+							<a href="###">取消订单</a>
+						</dd>
+						<dd>
+							<a href="###">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="__PUBLIC__img/weixin.png">
+							<p>官方微信</p>
+						</dd>
+					</dl>
+				</div><!--rightend-->
+				<div class="bottom">
+					<ul>
+						<li>
+							<a href="###">网站地图 </a>
+						</li>
+						<li>
+							<a href="###">法律声明 </a>
+						</li>
+						<li>
+							<a href="###">隐私条款 </a>
+						</li>
+						<li>
+							<a href="###">服务条款 </a>
+						</li>
+					</ul>
+					<p>
+						鲁ICP备15042201号-1 Copyright ©2016 康丽妍 版权所有
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>$(function(){		$("#add").each(function(a){		$('.aid').click(function(){//			alert(12)
+//			return false			var i=parseInt($(".prd_num").eq(a).val());			i=i+1;			$(".prd_num").eq(a).val(i);			//小计			var price=$(this).parent().parent().find('b.b_price').text()			$(this).parent().parent().find('td.td_total').text('￥ '+price*i)			total_price()		})	})		$("#sub").each(function(a){		$('.xid').click(function(){			var i=parseInt($(".prd_num").eq(a).val());			if(i>1){				i=i-1;				$(".prd_num").eq(a).val(i);			}			//小计			var price=$(this).parent().parent().find('b.b_price').text()			$(this).parent().parent().find('td.td_total').text('￥ '+price*i)			total_price()		})	})			$('.ck').click(function(){		total_price()	})		$('.ck_all').click(function(){		var bool=$(this).is(":checked")		if(bool){			$('.ck_all').prop('checked',true)			$('.ck').prop('checked',true)			total_price()		}else{			$('.ck_all').prop('checked',false)			$('.ck').prop('checked',false)			$("i.i_price").text(0)			$("i.i_num").text(0)					}	})		function total_price(){		var num=0		var total=0		var state=0		$('.ck').each(function(){						var bool=$(this).is(":checked")			if(bool){			//数量			var cnum=parseInt($(this).parent().parent().parent().find('.prd_num').val())			num=num+cnum			//价格			var cprice=$(this).parent().parent().parent().find('td.td_total').text()			cprice=parseFloat(cprice.substr(2))			total=total+cprice			}		})			$("i.i_price").text(total)		$("i.i_num").text(num)	}			})		</script>

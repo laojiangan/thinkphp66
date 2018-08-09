@@ -1,0 +1,85 @@
+
+<body>
+<div class="page-container">
+	<form class="form form-horizontal" id="form-article-add" action="" method="post">
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌logo：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="file"  value="" placeholder="" id="picture" name="logo">
+			</div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌详情：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="description" cols="" rows="" class="textarea"   onKeyUp="textarealength(this,200)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+			</div>
+		</div>
+		
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" style="margin-left: 100px;" class="btn btn-primary radius" type="submit" id="btn"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+<script>
+$(function(){
+		
+//		alert (123122)
+		var ufile=document.getElementById('picture')	
+		var btn =document.getElementById('btn')
+//		alert (123122)
+		btn.onclick=function(){
+			var fd=new FormData()
+//			alert(123)
+//			return false
+			for(var i=0;i<ufile.files.length;i++){
+				fd.append('ufile[]',ufile.files[i])
+			}
+			
+			var name=$('input[name="name"]').val()//名称
+			fd.append('name',name)
+			var description=$('script[name="description"]').val()//详情
+			fd.append('description',description)
+
+			if(name==''){
+				alert('名称不能为空')
+				return false
+			}
+//			alert(123)
+//			return false
+			$.ajax({
+				type:'post',
+				url:"{:url('brandAdd')}",
+//				async:true,
+				cache:true,
+				data:fd,
+				contentType:false,
+				processData:false,
+				success:function(data){
+					if(data.info){
+						alert(data.msg)
+						location = "{:url('brandList')}"
+					}else{
+						alert(data.msg)
+					}
+				}
+			})
+			return false			
+		}
+	
+	})
+		
+	
+</script>

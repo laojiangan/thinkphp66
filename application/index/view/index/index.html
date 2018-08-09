@@ -1,0 +1,476 @@
+ 
+{include file="public/header"}
+		<!--header-->
+	<link rel="stylesheet" href="__PUBLIC__css/index.css" />
+	<script type="text/javascript" src="__PUBLIC__js/index.js" ></script>
+
+
+		<!--header end-->
+
+		<!--content-->
+
+		<div class="content">
+
+			<div class="banner">
+
+				<div class="banner_content">
+
+					<ul>
+
+						<li><a href="###"><img src="__PUBLIC__img/banner_01.jpg" alt="banner_01"></a></li>
+
+						<li><a href="###"><img src="__PUBLIC__img/banner2.JPG" alt="banner_02"></a></li>
+
+						<li><a href="###"><img src="__PUBLIC__img/banner3.JPG" alt="banner_03"></a></li>
+
+					</ul>
+
+				</div>
+
+				<div class="hd">
+
+					<ul>
+
+						<li class="on"></li>
+
+						<li></li>
+
+						<li></li>
+
+					</ul>
+
+				</div>
+
+				<a class="pre" href="###"></a>
+
+				<a class="next" href="###"></a>
+
+				<div class="mg">
+
+					<div class="member">
+
+						<img src="__PUBLIC__img/member.png"/>
+
+						<h1>Hi~你好！</h1>
+
+						<a href="{:url('Login/login')}" class="login"><span><img src="__PUBLIC__img/banner_log.png"></span>请登录</a>
+
+						<a href="{:url('register/register')}" class="regist">免费注册 <i>></i></a>
+
+						<ul>
+
+							<li>退货保障</li>
+
+							<li>极速退款</li>
+
+							<li>信用卡分期</li>
+
+						</ul>
+
+						<a href="###" class="privi">更多特权 <i>></i></a>
+
+						<a class="activity" href="###">品牌活动</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="mg">
+
+				<div class="first_floor">
+
+					<h1>1F</h1>
+
+					<p>New Arrivals</p>
+
+					<a class="more" href="{:url('Product/product')}">更多 ></a>
+
+					<div class="pro_list">
+
+						<ul>
+						{volist name='prolist' id='pv'}
+							<li>
+
+								<a href="{:url('Product/pro_details')}"><img src="{$pv.thumb|substr=###,1}"width="235" height="275" alt="图片无法加载" class="img-responsive imgser" /></a>
+
+								<h2><a href="{:url('Product/pro_details')}">
+
+									康丽妍冬季上新 
+
+									</a>
+
+									<p>KangLiYan</p>
+
+								</h2>
+
+								<a href="{:url('Product/pro_details')}" class="new_pro">冬新品直降</a>
+
+								<p class="line"></p>
+
+							</li>
+						{/volist}
+							
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="ad">
+
+				<a href="{:url('Product/pro_details')}"><img src="__PUBLIC__img/banner_big_02.jpg" ></a>
+
+			</div>
+
+			<div class="mg">
+
+				<div class="sec_floor">
+
+					<h1>
+
+						2F<span>爆款热卖<i>Hot explosion models</i></span>
+
+					</h1>
+
+					<a class="more" href="{:url('Product/pro_details')}">更多 ></a>
+
+					<ul>
+
+						<li>
+
+							<img src="__PUBLIC__img/sec_logo.jpg" class="logo">
+
+							<a href="{:url('Product/pro_details')}" class="gir_pic">
+
+								<img src="__PUBLIC__img/sec_01.jpg">
+
+							</a>
+
+							<div class="search_text">
+
+								<h2><a href="{:url('Product/pro_details')}">气质名媛</a></h2>
+
+								<p>优雅性感</p>
+
+								<p1>Elegant</p1>
+
+								<a href="{:url('Product/pro_details')}" class="details">查看详情</a>
+
+							</div>
+
+						</li>
+
+						<li>
+
+							<a href="{:url('Product/pro_details')}">
+
+								<img src="__PUBLIC__img/sec_02.jpg">
+
+							</a>
+
+							<div class="sleep">
+
+								<h1>
+
+									<span><a href="{:url('Product/pro_details')}">新品直降30元</a></span>
+
+								</h1>
+
+								<p><a href="{:url('Product/pro_details')}">2016冬季新款休闲睡衣</a></p>
+
+							</div>
+
+						</li>	
+						
+						
+					{volist name='prolist' id='pv'}
+						<li>
+
+							<a href="{:url('Product/pro_details')}"><img src="{$pv.thumb|substr=###,1}"width="189" height="198"></a>
+
+								<a href="{:url('Product/pro_details')}" class="tittle">三层加棉睡衣女冬季</a>
+
+							<p>￥98.00<span>￥168.00</span></p>
+
+							<p class="line"></p>
+
+						</li>
+					{/volist}
+					
+
+					</ul>
+
+				</div><!--sec_floor end-->
+
+				<div class="thir_floor">
+
+					<h1>
+
+						3F<span>推荐商品<i>Pick of the week</i></span>
+
+					</h1>
+
+					<a class="more" href="{:url('Product/product')}">更多 ></a>
+
+					<ul>
+
+						<li>
+
+							<h1>秋冬魅力来袭</h1>
+
+							<p>最高满399减100</p>
+
+							<a href="{:url('Product/pro_details')}" class="details">查看详情</a>
+
+							<a href="{:url('Product/pro_details')}"><img src="__PUBLIC__img/thir_01.jpg"></a>
+
+						</li>
+
+						<li>
+
+							<a href="{:url('Product/pro_details')}">
+
+								<img src="__PUBLIC__img//thir_02.jpg">
+
+								<h2><a href="{:url('Product/pro_details')}">新品抢先购</a></h2>
+
+								<p>百款冬装限时优惠</p>
+
+								<i class="line"></i>
+
+							</a>
+
+						</li>
+						{volist name='alist' id='av'}
+						<li>
+
+							<a href="{:url('Product/pro_details')}"><img src="{$av.thumb|substr=###,1}"width="201" height="160"></a>
+
+							<h2><a href="{:url('Product/pro_details')}">康丽妍</a></h2>
+
+							<p>KangLiYan</p>
+
+							<a href="{:url('Product/pro_details')}">冬装热卖低至69元</a>
+
+							<p class="line"></p>
+
+						</li>
+						{/volist}
+						
+
+						<li>
+
+							<a href="{:url('Product/pro_details')}"><img src="__PUBLIC__img/thir_07.jpg"></a>
+
+							<h2><a href="{:url('Product/pro_details')}">皮绒狂欢盛宴</a></h2>
+
+							<p>最高满399减100</p>
+
+							<a href="{:url('Product/pro_details')}" class="deep">立即进入</a>
+
+						</li>
+
+					</ul>
+
+				</div><!--thir_floor end-->
+
+				<div class="four_floor">
+
+					<h1>
+
+						4F<span>性感风情<i>Sexy amorous feelings</i></span>
+
+					</h1>
+
+					<a class="more" href="{:url('Product/product')}">更多 ></a>
+
+					<div class="left_menu">
+
+						<ul>
+
+							<li><a href="###">导航</a></li>
+
+							<li><a href="{:url('Product/product')}">女士睡衣</a></li>
+
+							<li><a href="{:url('Product/product')}">男士睡衣</a></li>
+
+							<li><a href="{:url('Product/product')}">套装睡衣</a></li>
+
+							<li><a href="{:url('Product/product')}">亲子装</a></li>
+
+							<li><a href="{:url('Product/product')}">情侣装</a></li>
+
+							<li><a href="{:url('Product/product')}">更多</a></li>
+
+							<li id="returnTop"><a href="###">顶部</a><i></i></li>
+
+							
+
+						</ul>
+
+					</div>
+
+					<div class="right">
+
+						<ul>
+
+							<li>
+
+								<a href="{:url('Product/pro_details')}"><img src="__PUBLIC__img/four_01.jpg"></a>
+
+								<i><img src="__PUBLIC__img/sanjiao.png" ></i>
+
+								<p>秋冬魅力来袭</p>
+
+								<p1>留住你的美丽 </p1>
+
+								<p2>!</p2>
+
+							</li>
+							{volist name='prolist' id='pv'}
+							<li>
+
+								<a href="{:url('Product/pro_details')}"><img src="{$pv.thumb|substr=###,1}"width="191" height="352" ></a>
+
+								<h1><a href="{:url('Product/pro_details')}">魅力无界限</a></h1>
+
+								<p><a href="{:url('Product/pro_details')}">全场低至59元起</a></p>
+
+								<span class="line"></span>
+
+							</li>
+							{/volist}
+							
+						</ul>
+
+					</div>
+
+				</div><!--flour_floor end-->
+
+				<div class="five_floor">
+
+					<h1>
+
+						5F<span>情侣套装<i>Couples dress</i></span>
+
+					</h1>
+
+					<a class="more" href="{:url('Product/product')}">更多 ></a>
+
+					<ul>
+						{volist name='alist' id='av'}
+						<li><a href="{:url('Product/pro_details')}">
+
+							<img src="{$av.thumb|substr=###,1}"width="300" height="750"></a>
+
+							<div class="text">
+
+								<h1><a href="{:url('Product/pro_details')}"><i>KangLiYAN</i>康丽妍</a></h1>
+
+								<p>原创少女品牌</p>
+
+								<p><a href="{:url('Product/pro_details')}">全场满249减20</a></p>
+
+							</div>
+
+						</li>
+						{/volist}
+						
+
+					</ul>
+
+				</div><!--five_floor end-->
+
+				<div class="six_floor">
+
+					<h1>
+
+						6F<span>猜你喜欢<i>Guess you like</i></span>
+
+					</h1>
+
+					<a class="more" href="{:url('Product/product')}">更多 ></a>
+
+					<ul>
+						{volist name='prolist' id='pv'}
+						<li>
+
+							<a href="{:url('Product/pro_details')}"><img src="{$pv.thumb|substr=###,1}"width="199" height="399" class="img-responsive"></a>
+
+							<h2>零售价：<strong>168￥</strong></h2>
+
+							<a href="comfirm_order.html" class="buy">立即购买</a>
+
+							<i></i>
+
+							<p class="line"></p>
+
+						</li>
+						{/volist}
+						
+					</ul>
+
+				</div><!--six_floor-->
+
+				<div class="big_ad">
+
+					<a href="###"><img src="__PUBLIC__img/index_banner_03.jpg"></a>
+
+				</div>
+
+			</div><!--mg end-->
+
+			<div class="comfir">
+
+				<div class="mg">
+
+					<ul>
+
+						<li>
+
+							<img src="__PUBLIC__img/com_01.png"> 
+
+							100%正品保证
+
+						</li>
+
+						<li>
+
+							<img src="__PUBLIC__img/com_02.png"> 
+
+							新人首单免邮
+
+						</li>
+
+						<li>
+
+							<img src="__PUBLIC__img/com_03.png"> 
+
+							7天无理由退换货
+
+						</li>
+
+						<li>
+
+							<img src="__PUBLIC__img/com_04.png"> 
+
+							首次退换货免邮
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--content end-->
+{include file="public/footer"}
+

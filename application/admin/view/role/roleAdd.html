@@ -1,0 +1,96 @@
+
+<body>
+<div class="page-container">
+	<form class="form form-horizontal" id="form-article-add" action="" method="post">
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">角色名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<!--<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌logo：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="file"  value="" placeholder="" id="" name="">
+			</div>
+		</div>-->
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<li class="level">
+				<label class="form-label col-xs-4 col-sm-2">角色权限：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					
+					{volist name='list' id='v'}
+					<prev>
+						{if condition="$v['fid']==0"}
+							<b style="display: block;"><input type="checkbox" value="{$v.id}" id="" name="level[]">{$v.name}</b>
+						{/if}
+					
+						{volist name='list' id='vv'}
+							{if condition="$vv['fid']==$v['id']"}
+								<span><input type="checkbox"  value="{$vv.id}" id="" name="level[]">{$v.name}</sapn>
+							{/if}
+						{/volist}
+						</prev>
+					{/volist}
+					
+				</div>
+			</li>
+		</div>
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2"></label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<button  type="button" class="all"  name="but" value="" >全选</button>
+				<button  type="button" class="onall" name="buton" value="" >取消全选</button>
+				
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" style="margin-left: 100px;" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+
+<script>
+$(function(){
+//	alert (123)
+	
+	//全选
+	$('.all').click(function(){
+		$('.level').find('input').prop('checked',true)
+	})
+	
+	//取消全选
+	$('.onall').click(function(){
+		$('.level').find('input').prop('checked',false)
+	})
+	
+	
+	//点击父级选项子级全选    父级取消则子级全部取消
+	$('.level b').click(function(){
+		var bool = $(this).find('input').is(':checked')
+		$(this).parent().find('span input').prop('checked',bool)
+	})
+	
+	//
+	$('.level span input').click(function(){
+		var bool = $(this).is(':checked')
+		var parent_bool = $(this).parent().parent().find('b input').is(':checked')
+		if(!parent_bool){
+			$(this).parent().parent().find('b input').prop('checked',true)
+		}	
+	})
+	
+	
+	
+	
+})
+	
+	
+	
+</script>

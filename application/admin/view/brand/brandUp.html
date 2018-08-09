@@ -1,0 +1,36 @@
+
+<body>
+<div class="page-container">
+	<form class="form form-horizontal" id="form-article-add" action=""  method="post">
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌添加：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$one.name}" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<!--<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌logo：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="file"  value="" placeholder="" id="" name="">
+			</div>
+		</div>-->
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">品牌详情：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="description" cols="" rows="" class="textarea"  >{$one.description}</textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+			</div>
+		</div>
+		
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" style="margin-left: 100px;" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<title>{$title}</title>
+
+		<link rel="stylesheet" href="__PUBLIC__css/bootstrap.css" />
+
+		<link rel="stylesheet" href="__PUBLIC__css/comon.css" />
+
+		<link rel="stylesheet" href="__PUBLIC__css/style.css" />
+
+	
+		<script type="text/javascript" src="__PUBLIC__js/swich.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/jquery-1.11.0.js"></script>
+
+		<script type="text/javascript" src="__PUBLIC__js/float_bar.js"></script>
+
+		<script type="text/javascript" src="__PUBLIC__js/angular.min.js" ></script>
+
+		<script type="text/javascript" src="__PUBLIC__js/pro_details.js" ></script>
+
+		
+
+		<script type="text/javascript" src="__PUBLIC__js/quit.js" ></script>
+
+		
+
+	</head>
+
+	<body>
+
+		<div class="bar_flo">
+
+			<ul>
+
+				<li>
+
+				<a href="{:url('user/user')}" ><img src="__PUBLIC__img/bar_01.png"></a>
+
+			</li>
+
+			<li>
+
+				<a href="{:url('Shopping/shop_cart')}">购物车</a>
+
+			</li>
+
+			<li>
+
+				<dl>
+
+					<dd><a href="###"><img src="__PUBLIC__img/bar_03.png"></a></dd>
+
+					<dd><a href="###"><img src="__PUBLIC__img/bar_04.png"></a></dd>
+
+					<dd><a href="###"><img src="__PUBLIC__img/bar_05.png"></a></dd>
+
+					<dd><a href="###"><img src="__PUBLIC__img/bar_06.png"></a></dd>
+
+				</dl>
+
+			</li>
+
+			<li>
+
+				<a href="###"><img src="__PUBLIC__img/bar_07.png"></a>
+
+			</li>
+
+			<li id="f_returnTop">
+
+				<a href="###" ><i></i>TOP</a>
+
+			</li>
+
+			</ul>
+
+			
+
+		</div>
+		<div class="header">
+
+			<div class="header-top">
+
+				<div class="mg">
+					{if condition="session('?uname')"}
+						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>
+	
+						<a href="{:url('User/user')}" class="login pull-left" id="login"><i>{$Think.session.uname}</i></a>
+
+						<a href="{:url('Login/logout')}" class="quit" ><span>|</span> 安全退出</a>
+					{else /}
+						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>
+	
+						<a href="{:url('Login/login')}" class="login pull-left" id="login"><i>请登录</i> <span>|</span></a>
+	
+						<a href="{:url('register/register')}" class=" regist"> 免费注册</a>
+					{/if}
+					<ul class="  pull-right">
+		
+
+						<li><a href="{if condition="session('?uname')"}{:url('user/user')}{/if}">会员中心</a></li>
+
+						<li><a href="###">企业采购</a></li>
+
+						<li>
+
+							<a href="###">客户服务</a>
+
+							<dl>
+
+								<dd>
+
+									<a href="###">客户服务</a>
+
+								</dd>
+
+								<dd>
+
+									<a href="###">客户服务</a>
+
+								</dd>
+
+							</dl>
+
+						</li>
+
+						<li>
+
+							<a href="###">网站导航</a>
+
+							<dl>
+
+								<dd>
+
+									
+
+									<a href="###">网站导航</a>
+
+								</dd>
+
+								<dd>
+
+									<a href="###">网站导航</a>
+
+								</dd>
+
+							</dl>
+
+	
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div><!--header_top end-->
+
+			<div class="mg">
+
+				<div class="header_content">
+
+					<div class="logo">
+
+						<a href="{:url('index/index')}"><img src="__PUBLIC__img/logo_03.png"></a>
+
+					</div>
+
+					<div class="search">
+
+						<input type="text"placeholder="输入商品关键词搜索">
+
+						<a href="{:url('index/index')}" class="search_text">搜索</a>
+
+						<ul>
+
+							<li><a href="shop_list.html">男士家居服</a></li>
+
+							<li><a href="shop_list.html">儿童家居服</a></li>
+
+							<li><a href="shop_list.html">休闲家居服</a></li>
+
+							<li><a href="shop_list.html">运动家居服</a></li>
+
+						</ul>
+
+					</div>
+
+					<div class="shop_car pull-left">
+
+						<a href="{:url('Cart/cartList')}">
+
+							购物车
+
+							<span class="badge ">0</span>
+
+						</a>
+
+						
+
+					</div>
+
+				</div>
+
+			</div><!--mg end-->
+				
+					<div class="nav ">
+
+				<ul>
+
+					<li class="on">
+
+						<a href="{:url('index/index')}"> 
+
+						<span><img src="__PUBLIC__img/goods_nav.png"></span>
+
+						商品分类
+
+						</a>
+
+						<div class="memu">
+
+							<dl>
+
+								<dt>女士睡衣</dt>
+
+								<dd><a href="{:url('Product/product')}">套头</a></dd>
+
+								<dd><a href="{:url('Product/product')}">休闲</a></dd>
+
+								<dd><a href="{:url('Product/product')}">睡眠</a></dd>
+
+							</dl>
+
+							<dl>
+
+								<dt>男装睡衣</dt>
+
+								<dd><a href="{:url('Product/product')}">运动</a></dd>
+
+								<dd><a href="{:url('Product/product')}">起居</a></dd>
+
+								<dd><a href="{:url('Product/product')}">全棉</a></dd>
+
+							</dl>
+
+							<dl>
+
+								<dt>童装睡衣</dt>
+
+								<dd><a href="{:url('Product/product')}">时尚</a></dd>
+
+								<dd><a href="{:url('Product/product')}">可爱</a></dd>
+
+								<dd><a href="{:url('Product/product')}">全棉</a></dd>
+
+							</dl>
+
+							<dl>
+
+								<dt>亲子套装</dt>
+
+							</dl>
+
+							<dl>
+
+								<dt>情侣套装</dt>
+
+								
+
+							</dl>
+
+							<dl>
+
+								<dt>风格</dt>
+
+								<dd><a href="{:url('Product/product')}">性感</a></dd>
+
+								<dd><a href="{:url('Product/product')}">少女</a></dd>
+
+								<dd><a href="{:url('Product/product')}">舒适</a></dd>
+
+							</dl>
+
+							<dl>
+
+								<dt>款式</dt>
+
+								<dd><a href="{:url('Product/product')}">睡袍</a></dd>
+
+								<dd><a href="{:url('Product/product')}">睡衣</a></dd>
+
+								<dd><a href="{:url('Product/product')}">小吊衣</a></dd>
+
+							</dl>
+
+						</div>				
+
+					</li>
+
+					<li><a href="{:url('index/index')}">首页</a></li>
+					
+					{volist name='inlist' id='iv'}
+						<li><a href="{:url('Product/product',['id'=>$iv.id])}">{$iv.name}</a></li>
+					{/volist}
+					
+
+					
+
+				</ul>
+
+			</div><!--nav end-->
+
+		</div>
+
+			

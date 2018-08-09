@@ -1,0 +1,54 @@
+
+<body>
+<div class="page-container">
+	<form class="form form-horizontal" id="form-article-add" action="" method="post">
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">角色：</label>
+			<div class="formControls col-xs-8 col-sm-9"><span class="select-box" style="width: 200px;">
+				<select name="roid" class="select"  >
+					<option value="0">--选择角色--</option>
+					{volist name='roleList' id="bv"}
+					<option value="{$bv.id}">{$bv.name}</option>
+					{/volist}
+				</select>
+			 </div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">账号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">昵称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="uname">
+			</div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="password" class="input-text" value="" placeholder="" id="" name="pwd">
+			</div>
+		</div>
+		
+		<div class="row cl" style="margin-left: 100px;">
+			<label class="form-label col-xs-4 col-sm-2">确认密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="password" class="input-text" value="" placeholder="" id="" name="pwd_confirm">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" style="margin-left: 100px;" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+

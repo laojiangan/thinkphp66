@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认订单页</title>
+		<link rel="stylesheet" href="__PUBLIC__css/bootstrap.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/comon.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/style.css" />
+		<link rel="stylesheet" href="__PUBLIC__css/comfirm_order.css"/>
+		<script type="text/javascript" src="__PUBLIC__js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/comfirm_order.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__js/quit.js" ></script>
+	</head>
+	<body>
+		<!--header-->
+		<div class="header">
+			<div class="header-top">
+				<div class="mg">
+					{if condition="session('?uname')"}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('User/user')}" class="login pull-left" id="login"><i>{$Think.session.uname}</i></a>						<a href="{:url('Login/logout')}" class="quit" ><span>|</span> 安全退出</a>					{else /}						<h1 class="pull-left"><a href="{:url('index/index')}">欢迎来到康丽妍!</a></h1>							<a href="{:url('Login/login')}" class="login pull-left" id="login"><i>请登录</i> <span>|</span></a>							<a href="{:url('register/register')}" class=" regist"> 免费注册</a>					{/if}
+					<ul class="  pull-right">
+						
+						<li><a href="user.html">会员中心</a></li>
+						<li><a href="###">企业采购</a></li>
+						<li>
+							<a href="###">客户服务</a>
+							<dl>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+								<dd>
+									<a href="###">客户服务</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<a href="###">网站导航</a>
+							<dl>
+								<dd>
+									
+									<a href="###">网站导航</a>
+								</dd>
+								<dd>
+									<a href="###">网站导航</a>
+								</dd>
+							</dl>
+	
+						</li>
+					</ul>
+				</div>
+			</div><!--header_top end-->
+			<div class="header_content">
+				<div class="mg">
+					<a href="{:url('index/index')}" class="pic"><img src="__PUBLIC__img/logo_03.png" alt="图片无法加载"></a>
+					
+					<div class="search pull-right" >
+						<input type="text"placeholder="睡衣女">
+						<a href="###" class="search_text">搜索</a>
+						
+					</div>
+				</div>
+			</div><!--header_content end-->
+		</div><!--header end-->
+		<div class="content">
+			<div class="mg">
+				<h1>
+				填写并核对商品信息
+				</h1>
+				<div class="peo_mess">
+					<h2>
+						收货人信息
+						<a href="{:url('User/address')}">新增收货地址</a>
+					</h2>
+					<p>地址
+						<img src="__PUBLIC__img/comfirm_01.png">
+					</p>					<input type="hidden" value="{$midlist.id}" class="addrsessid" name="id" />
+					<p> <input style="background: none; border: none;" type="text" name="detailed" class="detailed" value="{$midlist.detailed}"></p>
+					<p class="line"></p>
+				</div><!--peo_mess end-->								<div class="pay_way">					<h2>						收货人信息					</h2>					<ul>						<li class="on">							<a href="###" class="at">																<input type="checkbox" style="background: none; border: none;display: block;" class="state ste" value="1" checked="checked"/>支付宝							</a>							<img src="__PUBLIC__img/comfirm_01.png">						</li>						<li>							<a href="###" class="bt">								<input type="checkbox" style="background: none; border: none; display: block;" class="state sta" value="2"/>余额							</a>							<img src="__PUBLIC__img/comfirm_01.png">						</li>						<li>												</ul>					<p class="line"></p>				</div><!--pay_way-->
+				
+				<div class="send">
+					<h2>
+						送货清单
+						<a href="shop_cart.html">返回修改购物车</a>
+					</h2>				{volist name='list' id='cv'}					{if condition="$cv.state==1"}					
+					<ul class="goods_det">
+						<li>
+						<div class="left">
+							<h1>配送方式</h1>
+							<p>快递运输<img src="__PUBLIC__img/comfirm_01.png"></p>
+							<p>免运费</p>
+						</div>
+						<div class="right">
+							<dl>
+								<dd>
+									<h1>康丽妍商城</h1>
+									<a href="pro_details.html"><img src="{$cv.thumb|substr=###,1}"width="83" height="81"></a></a>
+									<h2><a href="pro_details.html">{$cv.name} </a></h2>
+									<p>亲亲熊法兰绒 L(165/95)</p>
+									<p><a href="###">7天无理由退货</a></p>
+								</dd>
+								<dd>￥ {$cv.sales*$cv.num}.00  </dd>
+								<dd>ｘ{$cv.num}</dd>
+								<dd>有货</dd>
+							</dl>
+						</div>
+					</li>											<!--goods_det-->					{/if}				{/volist}
+					
+					</ul>
+					<label>
+						
+						<span>添加备注</span>
+						<input type="text" placeholder="限60字以内">
+					</label>
+					<p class="line"></p>
+					<dl>
+						<dt>发票信息</dt>
+						<dd>不开发票</dd>
+						<dd>个人</dd>
+						<dd>明细</dd>
+						<dd>
+							<a href="###">修改</a>
+						</dd>
+					</dl>
+					<p class="line"></p>
+					<ul class="total">
+						<li>
+							<i></i> 件商品，总商品金额：<span class="total">￥387.00</span><br />							运费：<span> ￥0.00</span><br />							服务费：<span>￥0.00</span><br />							退换无忧：<span>￥0.00</span><br />							应付总额 :<span class="total_two">￥307.00</span><br />							运费：<span> ￥0.00</span><br />
+						</li>
+					<p class="address">
+						<input type="text" style="background: none; border: none;" />
+					</p>
+					<a  class="sub"><input style="background: none; border: none;" type="button" value="提交订单" class="btn" /></a>
+				</div>
+				<div class="pro">
+					<div class="swich_top">
+						<ul>
+							<li class="on"><a href="###">猜你喜欢</a></li>
+							<li><a href="###">我的关注</a></li>
+							<li><a href="###">最近浏览的</a></li>
+						</ul>	
+					</div>
+					<div class="swich_con">
+						
+							<ul>
+								<li class="on">
+									<dl>
+										<dd>
+											<a href="pro_details.html"><img src="__PUBLIC__img/pay_s_01_03.jpg"></a>
+											<h1>
+												<a href="pro_details.html">卡托古依 2016春秋季韩版长袖睡
+													衣女套装秋季款卡通宽松加大码牛</a>
+											</h1>
+											<p>￥ 79.00</p>
+											<a class="shop_car" href="shop_cart.html">
+												加入购物车
+											</a>
+										</dd>
+										
+									</dl>
+									<a href="###" class="pre" id="pre"></a>
+									<a href="###" class="next" id="next"></a>
+								</li>
+								<li>
+									我的关注
+								</li>
+								<li>
+									最近浏览的
+								</li>
+							</ul>
+						
+					</div>
+				</div><!--pro end-->
+			</div><!--mg end-->
+			<div class="comfir">
+				<div class="mg">
+					<ul>
+						<li>
+							<img src="__PUBLIC__img/com_01.png"> 
+							100%正品保证
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_02.png"> 
+							新人首单免邮
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_03.png"> 
+							7天无理由退换货
+						</li>
+						<li>
+							<img src="__PUBLIC__img/com_04.png"> 
+							首次退换货免邮
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div><!--content end-->
+		<div class="footer">
+			<div class="mg">
+				<div class="left">
+					<div class="contact">
+					<h1>官方客服电话</h1>
+					<p>400-060-2008</p>
+					<p>周一至周日：9:00-22:00</p>
+					</div>
+					<h2>微博：168888@.com</h2>
+					<h2>QQ:1268888</h2>
+				</div>
+				<div class="right">
+					<dl>
+						<dt>购物指南</dt>
+						<dd>
+							<a href="register.html">免费注册</a>
+						</dd>
+						<dd>
+							<a href="###">购物流程</a>
+						</dd>
+						<dd>
+							<a href="###">会员介绍</a>
+						</dd>
+						<dd>
+							<a href="###">常见问题</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送方式</dt>
+						<dd>
+							<a href="###">上门自提</a>
+						</dd>
+						<dd>
+							<a href="###">配送服务查询</a>
+						</dd>
+						<dd>
+							<a href="###">配送费收取标准</a>
+						</dd>
+						<dd>
+							<a href="###">海外配送</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>支付方式</dt>
+						<dd>
+							<a href="###">货到付款</a>
+						</dd>
+						<dd>
+							<a href="###">在线支付</a>
+						</dd>
+						<dd>
+							<a href="###">分期付款</a>
+						</dd>
+						<dd>
+							<a href="###">公司转账</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>售后服务</dt>
+						<dd>
+							<a href="###">售后政策</a>
+						</dd>
+						<dd>
+							<a href="###">价格保护</a>
+						</dd>
+						<dd>
+							<a href="###">返修/退换货</a>
+						</dd>
+						<dd>
+							<a href="###">取消订单</a>
+						</dd>
+						<dd>
+							<a href="###">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="__PUBLIC__img/weixin.png">
+							<p>官方微信</p>
+						</dd>
+					</dl>
+				</div><!--rightend-->
+				<div class="bottom">
+					<ul>
+						<li>
+							<a href="###">网站地图 </a>
+						</li>
+						<li>
+							<a href="###">法律声明 </a>
+						</li>
+						<li>
+							<a href="###">隐私条款 </a>
+						</li>
+						<li>
+							<a href="###">服务条款 </a>
+						</li>
+					</ul>
+					<p>
+						鲁ICP备15042201号-1 Copyright ©2016 康丽妍 版权所有
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html><script>	$(function(){		$('.btn').click(function(){						var addrsessid=$("input.addrsessid").val()			var state=$('input.state:checked').val()//			alert(addrsessid)
+//			return false			if(addrsessid=='' || addrsessid==null || addrsessid=="undefined"){				alert("请选择一个收货地址")				return false			}			$.post("{:url('Comfirm/orders')}",{addrsessid:addrsessid,state:state},function(data){				if(data.info){					location='/pay/'+data.orderid				}else{					alert(data.msg)				}			})		})			$('.bt').click(function(){			$('input.sta').prop('checked',true)			$('input.ste').prop('checked',false)					})				$('.at').click(function(){			$('input.ste').prop('checked',true)			$('input.sta').prop('checked',false)		})				$('input.sta').hide()		$('input.ste').hide()				//去掉点击后的虚线		$("a,input,button").focus(function(){this.blur()})	})			</script>

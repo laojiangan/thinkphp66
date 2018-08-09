@@ -1,0 +1,38 @@
+﻿
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> {$tlite} <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			
+
+			<div class="mt-20">
+				<table class="table table-border table-bordered table-bg table-hover table-sort">
+					<thead>
+						<tr class="text-c">
+							
+							<th>ID</th>
+							<th>角色名称</th>
+							<th>权限</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{volist name='list' id='v'}
+						<tr class="text-c">
+							<td>{$v.id}</td>
+							<td>{$v.name}</td>
+							<td>{$v.level}</td>
+							<td><a class="ml-5" href="{:url('Role/roleUp',['id'=>$v.id])}" title="编辑">编辑</a> <a style="text-decoration:none" href="{:url('Role/roleDelete',['id'=>$v.id])}" title="删除">删除</a></td>
+						
+						</tr>
+						{/volist}
+					</tbody>
+				</table>
+			
+			</div>
+			
+		</article>
+	</div>
+</section>
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<title>注册</title>
+
+		<link rel="stylesheet" href="__PUBLIC__css/style.css" />
+
+		<link rel="stylesheet" href="__PUBLIC__css/bootstrap.css">
+
+		<link rel="stylesheet" href="__PUBLIC__css/register.css">
+
+		<script type="text/javascript" src="__PUBLIC__js/jquery-1.11.0.js"></script>
+
+		<script type="text/javascript" src="__PUBLIC__js/bootstrap.js"></script>
+
+		<script type="text/javascript" src="__PUBLIC__js/register.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="header">
+
+			<div class="mg">
+
+				<a href="{:url('Index/index')}"><img src="__PUBLIC__img/logo_03.png" alt="图片无法加载"></a>
+
+				<p>欢迎注册</p>
+
+				<a href="{:url('Index/index')}" class="back">返回首页 ></a>
+
+				<p class="login">已有账户<a href="{:url('Login/login')}">请登录</a></p>
+
+			</div>
+
+		</div>
+
+		<div class="content">
+
+			<div class="mg">
+
+				<form action="" method="post">
+
+					<label>
+
+						<span>用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;名：</span>
+
+						<div id="userNameTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="请输入会员名！"></div>
+
+							<div id="resgisterNameTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="该会员名已被注册！"></div>
+
+						<input type="text" onblur="checkUserName(this.value)" placeholder="您的账户和登录名" id="userName uname" name="uname" >
+
+					</label>
+
+					<label>
+
+						<span>设 置 密 码：</span>
+
+						<div id="passwordTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="请输入密码！"></div>
+
+						<input type="password" placeholder="建议至少使用两种字符组合" id="password upwd" onblur="checkpassword(this.value)" name="upwd">
+
+					</label>
+
+					<label>
+
+						<span>确 认 密 码：</span>
+
+						<div id="com_passTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="两次密码输入不一致！"></div>
+
+						<input type="password" placeholder="请再次输入密码" id="com_pass upwd_cont" onblur="cofirmPass(this.value)" name="upwd_cont">
+
+					</label>
+
+					<label>
+
+						<div class="dropdown">
+
+						   <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+
+						      	中国+86
+
+						      <span class="glyphicon glyphicon-menu-down"></span>
+
+						   </button>
+
+						   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+						 
+
+						      <li role="presentation">
+
+						         <a role="menuitem" tabindex="-1" href="#">中国大陆</a>
+
+						      </li>
+
+						      <li role="presentation">
+
+						         <a role="menuitem" tabindex="-1" href="#">
+
+						          中国大陆
+
+						         </a>
+
+						      </li>
+
+						      
+
+						   </ul>
+
+						</div>
+
+							<div id="phoneTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="请输入手机号"></div>
+
+								<div id="phoneFalseTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="手机号格式不正确"></div>
+
+						<input type="text" placeholder="建议使用常用手机" id="phone" class="one" onblur="checkPhone(this.value)" name="phone"/>
+
+						
+
+					</label>
+
+					<label >
+
+						<div id="codeTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="请输入验证码"></div>
+
+						<div id="code_checkTip" title="温馨提示" data-container="body" data-toggle="popover" data-placement="top" 
+
+								data-content="验证码输入有误！"></div>
+
+						<span>验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;码：</span>
+
+						<i id="code_right">5cuy</i>
+
+						<input type="text" placeholder="请输入验证码" id="code" name="val" onblur="checkCode(this.value)">
+
+					</label>
+
+					<label class="c-checkbox">
+
+						<input type="checkbox" id="IsautoCheck" class="check" >
+
+						<span></span>
+
+						<p>我已阅读并同意 <a href="###">《康丽妍用户注册协议》</a></p>
+
+					</label>
+
+					<input type="button" class="once_re but" onclick="return checkRerister()" value="立即注册">
+
+				</form>	
+
+				<div class="message">
+
+					<div class="message_text">
+
+						<h1>
+
+							短信快速注册
+
+						</h1>
+
+						<p>中国大陆手机用户</p>
+
+						<p>编辑短信“<i>XX</i>”发送到</p>
+
+						<p>43420024420</p>
+
+						<h2>
+
+							<a href="###">企业用户注册</a>
+
+						</h2>
+
+						<p class="line"></p>
+
+						<h3>
+
+							<a href="###">NTERNATIONAL
+
+							CUSTOMERS</a>
+
+						</h3>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+		</div><!--content end-->
+
+		<div class="footer">
+
+			<div class="mg">
+
+				<ul>
+
+					<li><a href="###">关于我们</a></li>
+
+					<li><a href="###">联系我们</a></li>
+
+					<li><a href="###">人才招聘</a></li>
+
+					<li><a href="###">商家入驻</a></li>
+
+					<li><a href="###">广告服务</a></li>
+
+					<li><a href="###">友情链接 </a></li>
+
+					<li><a href="###">销售联盟</a></li>
+
+					<li><a href="###">康丽妍社区 </a></li>
+
+					<li><a href="###">康丽妍公益</a></li>
+
+					<li><a href="###">English Site</a></li>					
+
+				</ul>
+
+				<p>Copyright©2004-2016  康丽妍商城  版权所有</p>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
+<script>
+$(function(){
+//	alert(541641)
+
+
+	$('.but').click(function(){
+//		alert(541641)
+		var uname=$('input[name="uname"]').val()
+		var upwd=$('input[name="upwd"]').val()
+		var upwd_cont=$('input[name="upwd_cont"]').val()
+		var val=$('input[name="val"]').val()
+		var phone=$('input[name="phone"]').val()
+		
+		if(uname=='' || uname==null || uname== undefined){
+			alert('用户名不能为空')
+			return false
+		}
+		
+		if(upwd=='' || upwd==null || upwd== undefined){
+			alert('密码不能为空')
+			return false
+		}
+		
+		if(upwd_cont=='' || upwd_cont==null || upwd_cont== undefined){
+			alert('确认密码不能为空')
+			return false
+		}
+		
+		if(val=='' || val==null || val== undefined){
+			alert('验证码不能为空')
+			return false
+		}
+		
+		if(upwd!=upwd_cont){
+			alert('两次密码输入不一致')
+			return false
+		}
+		
+		$.post("{:url('Register/register')}",{uname:uname,upwd:upwd,val:val,phone:phone,upwd_confirm:upwd_cont},function(data){
+//			alert(data)
+			if(data.info){
+				alert(data.msg)
+//				alert(111)
+				location="{:url('Login/login')}"
+			}else{
+				alert(data.msg)
+			}
+		},'json')
+		return false
+	})
+
+})
+	
+</script>
